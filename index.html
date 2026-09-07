@@ -34,7 +34,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 flex min-h-screen">
 
-    <!-- DESKTOP SIDEBAR -->
+    <!-- SIDEBAR -->
     <aside class="w-64 bg-slate-900 text-slate-100 flex-shrink-0 flex flex-col justify-between hidden md:flex">
         <div>
             <div class="p-6 border-b border-slate-800">
@@ -56,48 +56,47 @@
                     <i class="fa-solid fa-chart-pie w-5"></i> Resumen Ejecutivo
                 </button>
                 <button onclick="switchTab('turnos')" id="btn-turnos" class="tab-btn w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition font-medium text-slate-300 hover:bg-slate-800 hover:text-white">
-                    <i class="fa-solid fa-calendar-days w-5"></i> Plan de Turnos (Agosto 2026)
+                    <i class="fa-solid fa-calendar-days w-5"></i> Plan de Turnos
                 </button>
                 <button onclick="switchTab('bitacora')" id="btn-bitacora" class="tab-btn w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition font-medium text-slate-300 hover:bg-slate-800 hover:text-white">
-                    <i class="fa-solid fa-book-bookmark w-5"></i> Bitácora Diaria (31 de Julio)
+                    <i class="fa-solid fa-book-bookmark w-5"></i> Bitácora y Casos Data
                 </button>
                 <button onclick="switchTab('tickets')" id="btn-tickets" class="tab-btn w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition font-medium text-slate-300 hover:bg-slate-800 hover:text-white">
-                    <i class="fa-solid fa-ticket w-5"></i> Histórico y Nivel 1/2
+                    <i class="fa-solid fa-ticket w-5"></i> Histórico y Rendimiento
                 </button>
                 <button onclick="switchTab('calidad')" id="btn-calidad" class="tab-btn w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition font-medium text-slate-300 hover:bg-slate-800 hover:text-white">
-                    <i class="fa-solid fa-award w-5"></i> Control de Calidad
+                    <i class="fa-solid fa-award w-5"></i> Control de Calidad PENC
                 </button>
                 <button onclick="switchTab('mantenciones')" id="btn-mantenciones" class="tab-btn w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition font-medium text-slate-300 hover:bg-slate-800 hover:text-white">
                     <i class="fa-solid fa-screwdriver-wrench w-5"></i> Preventivas PM
                 </button>
                 <button onclick="switchTab('riesgos')" id="btn-riesgos" class="tab-btn w-full flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition font-medium text-slate-300 hover:bg-slate-800 hover:text-white">
-                    <i class="fa-solid fa-triangle-exclamation w-5"></i> Riesgos y Mejoras
+                    <i class="fa-solid fa-triangle-exclamation w-5"></i> Riesgos y Lentitud
                 </button>
             </nav>
         </div>
         <div class="p-4 border-t border-slate-800 bg-slate-950/50 text-[11px] text-slate-400">
-            <span>Servicio Técnico Residente v8.0</span>
+            <span>Servicio Técnico Residente — Versión Septiembre 2026</span>
         </div>
     </aside>
 
-    <!-- MAIN WORKSPACE -->
+    <!-- WORKSPACE -->
     <main class="flex-1 flex flex-col min-w-0 overflow-y-auto h-screen">
         <header class="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-50">
             <div>
                 <h1 class="text-xl font-bold text-slate-900" id="header-title">Resumen Ejecutivo</h1>
-                <p class="text-xs text-slate-500">Servicio Operativo: Parques 365 días (9 a 18 hrs) | Casa Matriz (Lun-Vie 9 a 18 hrs)[cite: 2]</p>
+                <p class="text-xs text-slate-500">Servicio Operativo 365 días: Parques (Lun-Dom 9-18 hrs) | Casa Matriz (Lun-Vie 9-18 hrs)</p>
             </div>
             <div class="text-right hidden sm:block">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                    <i class="fa-solid fa-user-clock"></i> Horas Julio: 114% (912 hrs / 800 hrs)[cite: 2]
+                    <i class="fa-solid fa-user-clock"></i> Horas Agosto: 120% (960 hrs / 800 hrs)
                 </span>
             </div>
         </header>
 
-        <!-- CONTAINER -->
         <div class="p-6 space-y-6 flex-1 bg-slate-50">
 
-            <!-- TAB: RESUMEN EJECUTIVO -->
+            <!-- TAB 1: RESUMEN EJECUTIVO -->
             <div id="tab-resumen" class="tab-content space-y-6">
                 <!-- KPI CARDS -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -105,56 +104,60 @@
                         <div>
                             <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Backlog Actual</span>
                             <h3 class="text-2xl font-bold text-slate-900 mt-1">0 Tickets</h3>
-                            <p class="text-xs text-green-600 mt-1"><i class="fa-solid fa-circle-check"></i> Cola de trabajo al día[cite: 2]</p>
+                            <p class="text-xs text-green-600 mt-1"><i class="fa-solid fa-circle-check"></i> Cola de trabajo al día</p>
                         </div>
                         <div class="h-12 w-12 rounded-lg bg-green-50 flex items-center justify-center text-green-600 text-xl"><i class="fa-solid fa-check-double"></i></div>
                     </div>
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Calidad PENC</span>
-                            <h3 class="text-2xl font-bold text-slate-900 mt-1">98.0%</h3>
-                            <p class="text-xs text-slate-500 mt-1">Cumplimiento General[cite: 2, 3]</p>
+                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Calidad PENC (Agosto)</span>
+                            <h3 class="text-2xl font-bold text-slate-900 mt-1">97.0%</h3>
+                            <p class="text-xs text-slate-500 mt-1">0 Errores Críticos</p>
                         </div>
                         <div class="h-12 w-12 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 text-xl"><i class="fa-solid fa-star"></i></div>
                     </div>
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cumplimiento Cobertura</span>
-                            <h3 class="text-2xl font-bold text-slate-900 mt-1">114%</h3>
-                            <p class="text-xs text-emerald-600 mt-1">912 Hrs de 800 Hrs Planificadas[cite: 2]</p>
+                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cobertura Horas (Agosto)</span>
+                            <h3 class="text-2xl font-bold text-slate-900 mt-1">120%</h3>
+                            <p class="text-xs text-emerald-600 mt-1">960 hrs de 800 hrs presupuestadas</p>
                         </div>
-                        <div class="h-12 w-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 text-xl"><i class="fa-solid fa-user-clock"></i></div>
+                        <div class="h-12 w-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 text-xl"><i class="fa-solid fa-clock-rotate-left"></i></div>
                     </div>
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Preventivas PM</span>
+                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Mantenciones Preventivas</span>
                             <h3 class="text-2xl font-bold text-slate-900 mt-1">99.3%</h3>
-                            <p class="text-xs text-emerald-600 mt-1">27 de 28 Locaciones 100%[cite: 2]</p>
+                            <p class="text-xs text-emerald-600 mt-1">27 de 28 Locaciones 100%</p>
                         </div>
-                        <div class="h-12 w-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 text-xl"><i class="fa-solid fa-gears"></i></div>
+                        <div class="h-12 w-12 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600 text-xl"><i class="fa-solid fa-gears"></i></div>
                     </div>
                 </div>
 
-                <!-- DISTRIBUCION Y REGLAS -->
+                <!-- ESTRUCTURA DEL SERVICIO -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm lg:col-span-2 space-y-4">
-                        <h3 class="text-md font-bold text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-users text-stOrange mr-2"></i>Estructura de Cobertura Terreno</h3>
+                        <h3 class="text-md font-bold text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-users text-stOrange mr-2"></i>Estructura de Cobertura y Responsables</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                             <div class="p-3 bg-slate-50 border border-slate-100 rounded-lg">
                                 <p class="font-bold text-slate-800">Nicolás Zúñiga</p>
-                                <p class="text-slate-500 mt-0.5">Encargado principal de Parque Maipú (MPU). Cobertura prioritaria[cite: 2].</p>
+                                <p class="text-slate-500 mt-0.5">Encargado principal de Parque Maipú (MPU). Cobertura prioritaria.</p>
                             </div>
                             <div class="p-3 bg-slate-50 border border-slate-100 rounded-lg">
                                 <p class="font-bold text-slate-800">Felipe Carrasco</p>
-                                <p class="text-slate-500 mt-0.5">Encargado de San Bernardo (BH) y presencial en Padre Hurtado (PH) martes y jueves[cite: 2].</p>
+                                <p class="text-slate-500 mt-0.5">Encargado de San Bernardo (BH) y presencial en Padre Hurtado (PH) martes y jueves.</p>
                             </div>
                             <div class="p-3 bg-slate-50 border border-slate-100 rounded-lg">
                                 <p class="font-bold text-slate-800">Francisco Navarro</p>
-                                <p class="text-slate-500 mt-0.5">Soporte en Casa Matriz MacIver (MC) y contingencias en San Bernardo (BH)[cite: 2].</p>
+                                <p class="text-slate-500 mt-0.5">Soporte en Casa Matriz MacIver (MC) y contingencias en San Bernardo (BH).</p>
                             </div>
                             <div class="p-3 bg-slate-50 border border-slate-100 rounded-lg">
                                 <p class="font-bold text-slate-800">Claudio Silva</p>
-                                <p class="text-slate-500 mt-0.5">Coordinador general del servicio en MC y técnico de soporte fines de semana[cite: 2].</p>
+                                <p class="text-slate-500 mt-0.5">Coordinador general del servicio en MC y técnico resolutor fines de semana.</p>
+                            </div>
+                            <div class="p-3 bg-slate-50 border border-slate-100 rounded-lg sm:col-span-2">
+                                <p class="font-bold text-slate-800">Orlando Valladares / BKP</p>
+                                <p class="text-slate-500 mt-0.5">Soporte Backup asignado para reemplazos, refuerzos de fin de semana y contingencias de dotación.</p>
                             </div>
                         </div>
                     </div>
@@ -162,27 +165,29 @@
                     <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3 text-xs">
                         <h3 class="font-bold text-slate-900 uppercase tracking-wider text-slate-400">Gobernanza del Servicio</h3>
                         <div class="p-3 bg-blue-50/60 text-slate-700 rounded-lg space-y-2">
-                            <p><strong>Bitácora Diaria:</strong> Emitida de lunes a viernes con detalle de tickets, backlog y equipos[cite: 2].</p>
-                            <p><strong>Cierre Fin de Semana:</strong> Los lunes se incorporan e informan retroactivamente los tickets resueltos sábado y domingo[cite: 2].</p>
+                            <p><strong>Bitácora Diaria:</strong> Emitida de lunes a viernes detallando tickets atendidos, backlog y entregas de hardware.</p>
+                            <p><strong>Cierre Fin de Semana:</strong> Los lunes se incorporan e informan retroactivamente los tickets resueltos sábado y domingo.</p>
+                            <p><strong>Foco Prioritario:</strong> Parque Maipú y Casa Matriz definidos como centros neurálgicos de atención continua.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB: PLAN DE TURNOS (AGOSTO 2026 / JULIO 2026) -->
+            <!-- TAB 2: PLAN DE TURNOS (SEPTIEMBRE / AGOSTO / JULIO) -->
             <div id="tab-turnos" class="tab-content hidden space-y-6">
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <div class="flex flex-wrap items-center justify-between border-b border-slate-100 pb-4 gap-4">
                         <div>
                             <h3 class="text-lg font-bold text-slate-900">Planificación Mensual de Turnos por Fecha</h3>
-                            <p class="text-xs text-slate-500 mt-0.5">Mapa de asignación diaria incluyendo a Orlando Valladares (Soporte Backup) y Backup (BKP)[cite: 2, 6]</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Asignación diaria de técnicos residentes, Orlando Valladares (Soporte Backup) y BKP</p>
                         </div>
                         <div class="flex flex-wrap items-center gap-3 text-xs">
                             <div class="flex items-center gap-2">
                                 <label class="font-semibold text-slate-500">Seleccionar Mes:</label>
                                 <select id="mesFilter" onchange="switchMonthPlan()" class="border border-slate-300 rounded-lg p-1.5 bg-white font-semibold text-slate-800 shadow-sm">
-                                    <option value="agosto" selected>Agosto 2026 (Plan Activo)[cite: 6]</option>
-                                    <option value="julio">Julio 2026 (114% Cumplimiento - 912 hrs)[cite: 2]</option>
+                                    <option value="septiembre" selected>Septiembre 2026 (Plan Activo - 912 hrs)</option>
+                                    <option value="agosto">Agosto 2026 (120% Cumplimiento - 960 hrs)</option>
+                                    <option value="julio">Julio 2026 (114% Cumplimiento - 912 hrs)</option>
                                 </select>
                             </div>
                             <div class="flex items-center gap-2">
@@ -223,28 +228,29 @@
                 </div>
             </div>
 
-            <!-- TAB: BITACORA DIARIA (EXCLUSIVA 31 DE JULIO DE 2026) -->
+            <!-- TAB 3: BITACORA DIARIA Y CASOS DATA -->
             <div id="tab-bitacora" class="tab-content hidden space-y-6">
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
                     <div class="flex flex-wrap items-center justify-between border-b border-slate-100 pb-4 gap-4">
                         <div>
-                            <h3 class="text-lg font-bold text-slate-900">Bitácora Diaria de Soporte TI (31 de Julio de 2026)</h3>
-                            <p class="text-xs text-slate-500 mt-0.5">Cierre del mes con desglose completo de la Hoja Data de tickets, entregas y actividades[cite: 1]</p>
+                            <h3 class="text-lg font-bold text-slate-900">Bitácora Diaria y Registros de la Hoja Data</h3>
+                            <p class="text-xs text-slate-500 mt-0.5">Exploración de tickets cerrados, novedades operativas y entregas</p>
                         </div>
                         <div class="flex flex-wrap items-center gap-3 text-xs">
                             <div class="flex items-center gap-2">
-                                <label class="font-semibold text-slate-600"><i class="fa-solid fa-calendar-day text-stOrange mr-1"></i> Bitácora Activa:</label>
+                                <label class="font-semibold text-slate-600"><i class="fa-solid fa-calendar-day text-stOrange mr-1"></i> Bitácora:</label>
                                 <select id="bitacoraDateSelect" onchange="renderBitacoraDetails()" class="border border-slate-300 rounded-lg p-2 bg-white font-bold text-slate-800 shadow-sm">
-                                    <option value="2026-07-31" selected>31 de Julio de 2026 (Cierre de Mes - 105 Tickets)</option>
+                                    <option value="2026-08-31" selected>31 de Agosto de 2026 (Consolidado Agosto - 422 Tickets ST)</option>
+                                    <option value="2026-07-31">31 de Julio de 2026 (Cierre Julio - 105 Tickets)</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
-                    <!-- METRICAS DE LA BITACORA SELECCIONADA -->
+                    <!-- METRICAS DE LA BITACORA -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs" id="bitacoraKpis"></div>
 
-                    <!-- NOVEDADES Y OBSERVACIONES DEL DÍA -->
+                    <!-- NOVEDADES Y OBSERVACIONES -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs">
                         <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
                             <h4 class="font-bold text-slate-800 flex items-center gap-2 text-sm">
@@ -277,9 +283,8 @@
                     <div class="space-y-4">
                         <div class="flex flex-wrap items-center justify-between gap-4">
                             <h4 class="font-bold text-slate-800 text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-list-check text-emerald-600"></i> Registros de la Hoja Data (Atendidos al 31/07/2026)
+                                <i class="fa-solid fa-list-check text-emerald-600"></i> Registros de la Hoja Data
                             </h4>
-                            <!-- Buscador y Filtros de Tabla Data -->
                             <div class="flex flex-wrap items-center gap-2 text-xs">
                                 <input type="text" id="ticketSearchInput" onkeyup="filterDataTicketsTable()" placeholder="Buscar por ticket, asunto, usuario..." class="border border-slate-300 rounded-lg p-2 w-64 bg-white shadow-sm focus:outline-none focus:border-stOrange">
                                 <select id="ticketStatusFilter" onchange="filterDataTicketsTable()" class="border border-slate-300 rounded-lg p-2 bg-white font-medium text-slate-700 shadow-sm">
@@ -309,83 +314,100 @@
                         </div>
                         <div class="flex items-center justify-between text-xs text-slate-500 font-medium px-1">
                             <span id="ticketCountInfo">Mostrando 0 tickets</span>
-                            <span>Fuente: Hoja Data de Bitácora del 31 de Julio de 2026[cite: 1]</span>
+                            <span>Fuente: Consolidado Bitácoras Oficial</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB: GESTION DE TICKETS (HISTORICO Y NIVEL 1/2) -->
+            <!-- TAB 4: HISTORICO Y RENDIMIENTO -->
             <div id="tab-tickets" class="tab-content hidden space-y-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                        <h3 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wider text-slate-400">Tickets Resueltos por Técnico (Acumulado 2026)[cite: 2]</h3>
+                        <h3 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wider text-slate-400">Tickets Resueltos por Técnico (Agosto 2026)</h3>
                         <div class="h-64">
                             <canvas id="techChart"></canvas>
                         </div>
                     </div>
 
                     <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
-                        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-400">Distribución por Nivel de Resolución</h3>
+                        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider text-slate-400">Distribución Operativa del Servicio</h3>
                         <div class="grid grid-cols-2 gap-4 text-xs">
                             <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl">
-                                <span class="text-slate-400 block font-medium">Resolución Nivel 1 (Terreno)</span>
-                                <h4 class="text-2xl font-black text-emerald-600 mt-1">2,095 <span class="text-xs font-normal text-slate-500">(87.85%)</span></h4>
-                                <p class="text-[10px] text-slate-400 mt-1">Resuelto en sitio por residentes[cite: 2]</p>
+                                <span class="text-slate-400 block font-medium">Tickets Cerrados Técnicos ST</span>
+                                <h4 class="text-2xl font-black text-emerald-600 mt-1">422</h4>
+                                <p class="text-[10px] text-slate-400 mt-1">100% Requerimientos resueltos</p>
                             </div>
                             <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl">
-                                <span class="text-slate-400 block font-medium">Resolución Nivel 2 (Escalamiento)</span>
-                                <h4 class="text-2xl font-black text-blue-600 mt-1">240 <span class="text-xs font-normal text-slate-500">(12.15%)</span></h4>
-                                <p class="text-[10px] text-slate-400 mt-1">Requerimientos complejos[cite: 2]</p>
+                                <span class="text-slate-400 block font-medium">Total Solicitudes Analizadas</span>
+                                <h4 class="text-2xl font-black text-blue-600 mt-1">1.694</h4>
+                                <p class="text-[10px] text-slate-400 mt-1">Plataforma global Sendero</p>
                             </div>
                             <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl">
-                                <span class="text-slate-400 block font-medium">Total Tickets Atendidos (YTD)</span>
-                                <h4 class="text-2xl font-black text-slate-900 mt-1">2,362</h4>
-                                <p class="text-[10px] text-slate-400 mt-1">Mesa de control terreno[cite: 2]</p>
+                                <span class="text-slate-400 block font-medium">Backlog Neto de Cierre</span>
+                                <h4 class="text-2xl font-black text-slate-900 mt-1">0</h4>
+                                <p class="text-[10px] text-green-600 font-semibold mt-1"><i class="fa-solid fa-check"></i> Cola en cero</p>
                             </div>
                             <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl">
-                                <span class="text-slate-400 block font-medium">Tipo de Requerimiento</span>
-                                <h4 class="text-2xl font-black text-stOrange mt-1">100%</h4>
-                                <p class="text-[10px] text-slate-400 mt-1">Clasificado como Requerimiento[cite: 2]</p>
+                                <span class="text-slate-400 block font-medium">Casos de Lentitud Detectados</span>
+                                <h4 class="text-2xl font-black text-stOrange mt-1">96</h4>
+                                <p class="text-[10px] text-slate-400 mt-1">91 Sist. Comercial / 5 Equipos</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB: CONTROL DE CALIDAD -->
+            <!-- TAB 5: CONTROL DE CALIDAD PENC -->
             <div id="tab-calidad" class="tab-content hidden space-y-6">
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
                     <div>
-                        <h3 class="text-lg font-bold text-slate-900">Auditoría de Calidad PENC (Documentación y Cierres)</h3>
-                        <p class="text-xs text-slate-500 mt-0.5">Control de apego a procesos y calidad documental en plataforma Sendero[cite: 2, 3]</p>
+                        <h3 class="text-lg font-bold text-slate-900">Auditoría de Calidad PENC — Resultados Agosto 2026</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Evaluación periódica de la trazabilidad y calidad documental de tickets en Sendero</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
                         <div class="space-y-3.5">
                             <div>
-                                <div class="flex justify-between mb-1"><span>Datos de Contacto, Evidencias y Procedimientos</span><span class="font-bold text-green-600">100%</span></div>
+                                <div class="flex justify-between mb-1"><span>Datos de Contacto, Sintaxis, Detalle y SLA</span><span class="font-bold text-green-600">100%</span></div>
                                 <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full" style="width: 100%"></div></div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1"><span>Tiempo de Resolución y Detalle Técnico</span><span class="font-bold text-blue-600">98%</span></div>
-                                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-blue-500 h-full" style="width: 98%"></div></div>
+                                <div class="flex justify-between mb-1"><span>Alineación con Procedimientos, Evidencias y Cierre</span><span class="font-bold text-blue-600">100%</span></div>
+                                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-blue-500 h-full" style="width: 100%"></div></div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1"><span>Ortografía y Gramática</span><span class="font-bold text-amber-600">90%</span></div>
-                                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-amber-500 h-full" style="width: 90%"></div></div>
+                                <div class="flex justify-between mb-1"><span>Ortografía y Gramática (Foco de Mejora)</span><span class="font-bold text-amber-600">88%</span></div>
+                                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-amber-500 h-full" style="width: 88%"></div></div>
                             </div>
                         </div>
 
                         <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
-                            <h4 class="font-bold text-slate-800"><i class="fa-solid fa-chalkboard-user text-stOrange mr-1.5"></i>Taller de Capacitación en Servicio y CX</h4>
-                            <p class="text-slate-600 leading-relaxed">Jornada presencial ejecutada con el equipo de **CX de ST Computación** para reforzar trazabilidad, ortografía en notas de cierre y protocolo de atención con usuarios de Sendero[cite: 2].</p>
+                            <h4 class="font-bold text-slate-800"><i class="fa-solid fa-chalkboard-user text-stOrange mr-1.5"></i>Desempeño Individual de Técnicos</h4>
+                            <div class="grid grid-cols-2 gap-2 mt-2">
+                                <div class="p-2 bg-white rounded border border-slate-200">
+                                    <span class="text-slate-500 block">Felipe Carrasco:</span>
+                                    <span class="font-bold text-emerald-600 text-sm">100%</span>
+                                </div>
+                                <div class="p-2 bg-white rounded border border-slate-200">
+                                    <span class="text-slate-500 block">Nicolás Zúñiga:</span>
+                                    <span class="font-bold text-emerald-600 text-sm">98%</span>
+                                </div>
+                                <div class="p-2 bg-white rounded border border-slate-200">
+                                    <span class="text-slate-500 block">Claudio Silva:</span>
+                                    <span class="font-bold text-emerald-600 text-sm">100%</span>
+                                </div>
+                                <div class="p-2 bg-white rounded border border-slate-200">
+                                    <span class="text-slate-500 block">Francisco Navarro:</span>
+                                    <span class="font-bold text-blue-600 text-sm">93%</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB: MANTENCIONES PREVENTIVAS -->
+            <!-- TAB 6: MANTENCIONES PREVENTIVAS -->
             <div id="tab-mantenciones" class="tab-content hidden space-y-6">
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
                     <h3 class="text-lg font-bold text-slate-900">Estado del Plan de Mantenciones Preventivas</h3>
@@ -401,27 +423,34 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100">
-                                <tr><td class="p-3 font-semibold text-slate-900">Parque Maipú</td><td class="p-3 text-center">87</td><td class="p-3 text-center">87</td><td class="p-3 text-center">0</td><td class="p-3 text-green-600 font-bold"><i class="fa-solid fa-circle-check"></i> 100%[cite: 2]</td></tr>
-                                <tr><td class="p-3 font-semibold text-slate-900">Parque Concepción</td><td class="p-3 text-center">36</td><td class="p-3 text-center">36</td><td class="p-3 text-center">0</td><td class="p-3 text-green-600 font-bold"><i class="fa-solid fa-circle-check"></i> 100%[cite: 2]</td></tr>
-                                <tr><td class="p-3 font-semibold text-slate-900">Parque San Bernardo</td><td class="p-3 text-center">31</td><td class="p-3 text-center">31</td><td class="p-3 text-center">0</td><td class="p-3 text-green-600 font-bold"><i class="fa-solid fa-circle-check"></i> 100%[cite: 2]</td></tr>
-                                <tr><td class="p-3 font-semibold text-slate-900">Oficina Erasmo Escala</td><td class="p-3 text-center">5</td><td class="p-3 text-center">4</td><td class="p-3 text-center">1</td><td class="p-3 text-amber-600 font-bold">80%[cite: 2]</td></tr>
+                                <tr><td class="p-3 font-semibold text-slate-900">Parque Maipú</td><td class="p-3 text-center">87</td><td class="p-3 text-center">87</td><td class="p-3 text-center">0</td><td class="p-3 text-green-600 font-bold"><i class="fa-solid fa-circle-check"></i> 100%</td></tr>
+                                <tr><td class="p-3 font-semibold text-slate-900">Parque Concepción</td><td class="p-3 text-center">36</td><td class="p-3 text-center">36</td><td class="p-3 text-center">0</td><td class="p-3 text-green-600 font-bold"><i class="fa-solid fa-circle-check"></i> 100%</td></tr>
+                                <tr><td class="p-3 font-semibold text-slate-900">Parque San Bernardo</td><td class="p-3 text-center">31</td><td class="p-3 text-center">31</td><td class="p-3 text-center">0</td><td class="p-3 text-green-600 font-bold"><i class="fa-solid fa-circle-check"></i> 100%</td></tr>
+                                <tr><td class="p-3 font-semibold text-slate-900">Oficina Erasmo Escala</td><td class="p-3 text-center">5</td><td class="p-3 text-center">4</td><td class="p-3 text-center">1</td><td class="p-3 text-amber-600 font-bold">80% (Pendiente por usuario)</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB: RIESGOS Y MEJORAS -->
+            <!-- TAB 7: RIESGOS Y LENTITUD -->
             <div id="tab-riesgos" class="tab-content hidden space-y-6">
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-3 text-xs">
-                    <h3 class="text-md font-bold text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-triangle-exclamation text-stOrange mr-2"></i>Matriz de Riesgos Operativos</h3>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-xs">
+                    <h3 class="text-md font-bold text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-triangle-exclamation text-stOrange mr-2"></i>Matriz de Riesgos e Incidencias por Lentitud</h3>
+                    
+                    <div class="p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg space-y-1">
+                        <p class="font-bold text-amber-900 text-sm">Detección de Lentitud en Sistemas y Equipos (Agosto 2026)</p>
+                        <p class="text-slate-700">Se detectaron 96 incidencias asociadas a lentitud (91 casos en Sistema Comercial/Aplicaciones y 5 en Estaciones de Trabajo). Plan de seguimiento con Sendero y Proredes fijado al 30 de septiembre de 2026.</p>
+                    </div>
+
                     <div class="p-3 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
                         <p class="font-bold text-red-900">Base Proredes Desactualizada</p>
-                        <p class="text-slate-600 mt-0.5">La plataforma no cuenta con la base activa de personal cargada. Se solicitó actualización masiva[cite: 2].</p>
+                        <p class="text-slate-600 mt-0.5">La plataforma no cuenta con la base activa de personal cargada. Se solicitó actualización masiva.</p>
                     </div>
+
                     <div class="p-3 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
                         <p class="font-bold text-red-900">Datos Incompletos en Escalamiento desde MDA</p>
-                        <p class="text-slate-600 mt-0.5">Tickets derivados a terreno a veces carecen de teléfono o ubicación exacta del usuario[cite: 2].</p>
+                        <p class="text-slate-600 mt-0.5">Tickets derivados a terreno a veces carecen de teléfono o ubicación exacta del usuario.</p>
                     </div>
                 </div>
             </div>
@@ -429,33 +458,164 @@
         </div>
     </main>
 
-    <!-- DATASET Y LÓGICA DE INTERACTIVIDAD -->
+    <!-- DATASET Y LOGICA JAVASCRIPT -->
     <script>
         const bitacorasData = {
+            '2026-08-31': {
+                fechaLabel: '31 de Agosto de 2026 (Consolidado Mensual)',
+                recibidos: 422, mesaAyuda: 107, generadosTec: 315, backlog: 0,
+                incidentes: '96 tickets de lentitud analizados (91 Sistema Comercial, 5 Equipos).',
+                actividades: 'Rondas diarias preventivas, traslados de hardware y soporte presencial en parques.',
+                otros: 'Cobertura del mes cerrada con 960 hrs ejecutadas (120% cumplimiento). Plan de septiembre activo.',
+                ticketsData: [
+                    { ticket: "WO26-009845", canal: "Escalamiento Mesa", fecha: "2026-08-04 12:42", asunto: "Revisar comportamiento de lentitud de los Controladores de Dominio", solicitante: "Mitchel Otaiza / PROREDES.net", tecnico: "Rosbel Reyes Villasmil / PROREDES.net", estado: "Cerrado" },
+                    { ticket: "T26-080063", canal: "Solicitud por email", fecha: "2026-08-10 16:17", asunto: "RE: Lentitud extrema en equipo PC-944_Equipo Funeraria Maipu", solicitante: "Gonzalez C. Jensy", tecnico: "Samuel Herrera Jaraba / PROREDES.net", estado: "Cerrado" },
+                    { ticket: "T26-088435", canal: "Canal WEB", fecha: "2026-08-24 16:49", asunto: "PROBLEMAS CON LENTITUD", solicitante: "Saavedra S. Edgard", tecnico: "Francisco Angel Mauricio Navarro Rojas", estado: "Cerrado" },
+                    { ticket: "T26-089010", canal: "Solicitud telefónica", fecha: "2026-08-25 16:56", asunto: "Lentitud en equipo", solicitante: "Villanueva C. Patricia", tecnico: "Samuel Herrera Jaraba / PROREDES.net", estado: "Cerrado" },
+                    { ticket: "T26-090214", canal: "Canal WEB", fecha: "2026-08-31 16:30", asunto: "Ronda preventiva Parque Maipú", solicitante: "Arevalo S. Patricia", tecnico: "Nicolás Zúñiga", estado: "Cerrado" },
+                    { ticket: "T26-090215", canal: "Canal WEB", fecha: "2026-08-31 16:35", asunto: "Ronda preventiva Parque San Bernardo", solicitante: "Ordenes G. Julio", tecnico: "Felipe Carrasco M.", estado: "Cerrado" },
+                    { ticket: "T26-090216", canal: "Canal WEB", fecha: "2026-08-31 16:40", asunto: "Soporte usuarios Casa Matriz MacIver", solicitante: "Navarro Francisco", tecnico: "Francisco Angel Mauricio Navarro Rojas", estado: "Cerrado" },
+                    { ticket: "T26-090217", canal: "Canal WEB", fecha: "2026-08-31 17:00", asunto: "Coordinación y gestión de tickets terreno", solicitante: "Silva Claudio", tecnico: "Claudio Alberto Silva Toledo", estado: "Cerrado" }
+                ]
+            },
             '2026-07-31': {
-                fechaLabel: '31 de Julio de 2026 (Cierre del Mes)',
+                fechaLabel: '31 de Julio de 2026 (Cierre Mes Anterior)',
                 recibidos: 12, mesaAyuda: 2, generadosTec: 10, backlog: 0,
                 incidentes: 'Sin incidentes críticos reportados en la jornada.',
                 actividades: 'Traslado de equipo de oficina Bilbao a oficina San Pablo.',
-                otros: '1.- Soporte Técnico Fin de semana Parques San Bernardo/P.H. Sábado 1: Francisco Navarro, Domingo 2: Felipe Carrasco.\nParque Maipú. Sábado 1: Orlando Valladares, Domingo 2: Claudio Silva.',
+                otros: 'Cierre de mes de julio con 912 horas ejecutadas (114% cumplimiento).',
                 ticketsData: [
                     { ticket: "WO26-009202", canal: "Escalamiento Mesa", fecha: "2026-07-21 10:59", asunto: "Ref.: cambio de equipo para Joselyn Torrejon", solicitante: "Nancy Monsalve / PROREDES.net", tecnico: "Claudio Alberto Silva Toledo", estado: "En proceso" },
                     { ticket: "WO26-009582", canal: "Escalamiento Mesa", fecha: "2026-07-29 11:14", asunto: "RV: FORMULARIO DE ALTA - OSVALDO MALDONADO", solicitante: "Nancy Monsalve / PROREDES.net", tecnico: "Claudio Alberto Silva Toledo", estado: "Asignado" },
                     { ticket: "WO26-009709", canal: "Escalamiento Mesa", fecha: "2026-07-31 11:11", asunto: "Puesto trabajo Cristian Acevdo", solicitante: "Samuel Herrera Jaraba / PROREDES.net", tecnico: "Claudio Alberto Silva Toledo", estado: "Asignado" },
-                    { ticket: "WO26-009720", canal: "Escalamiento Mesa", fecha: "2026-07-31 12:09", asunto: "Dejar IPs Fijas en los siguientes equipos", solicitante: "Samuel Herrera Jaraba / PROREDES.net", tecnico: "Claudio Alberto Silva Toledo", estado: "Asignado" },
-                    { ticket: "T26-076594", canal: "Canal WEB", fecha: "2026-07-31 16:47", asunto: "Ronda preventiva en sector Administración.", solicitante: "Montenegro M. Paola", tecnico: "Nicolás Zúñiga", estado: "Cerrado" },
-                    { ticket: "T26-076593", canal: "Canal WEB", fecha: "2026-07-31 16:46", asunto: "Ronda preventiva sector Condolencias.", solicitante: "Valenzuela V. Soledad", tecnico: "Nicolás Zúñiga", estado: "Cerrado" },
-                    { ticket: "T26-076591", canal: "Canal WEB", fecha: "2026-07-31 16:45", asunto: "Ronda preventiva en sector sala de ventas.", solicitante: "Arevalo S. Patricia", tecnico: "Nicolás Zúñiga", estado: "Cerrado" },
-                    { ticket: "T26-076589", canal: "Canal WEB", fecha: "2026-07-31 16:44", asunto: "Ronda preventiva de equipos Pajaritos.", solicitante: "Hernandez Lucía", tecnico: "Nicolás Zúñiga", estado: "Cerrado" },
-                    { ticket: "T26-076588", canal: "Canal WEB", fecha: "2026-07-31 16:40", asunto: "Revisión pantallas piso 1", solicitante: "Ordenes G. Julio", tecnico: "Felipe Carrasco M.", estado: "Cerrado" },
-                    { ticket: "T26-076587", canal: "Canal WEB", fecha: "2026-07-31 16:39", asunto: "ronda preventiva Sendero San Bernardo piso 2", solicitante: "Ordenes G. Julio", tecnico: "Felipe Carrasco M.", estado: "Cerrado" },
-                    { ticket: "T26-076586", canal: "Canal WEB", fecha: "2026-07-31 16:38", asunto: "ronda preventiva Sendero San Bernardo piso 1", solicitante: "Ordenes G. Julio", tecnico: "Felipe Carrasco M.", estado: "Cerrado" },
-                    { ticket: "T26-076580", canal: "Canal WEB", fecha: "2026-07-31 16:29", asunto: "Atasco de papel en impresora de ventas.", solicitante: "Mendez C. Millene", tecnico: "Nicolás Zúñiga", estado: "Cerrado" }
+                    { ticket: "T26-076594", canal: "Canal WEB", fecha: "2026-07-31 16:47", asunto: "Ronda preventiva en sector Administración.", solicitante: "Montenegro M. Paola", tecnico: "Nicolás Zúñiga", estado: "Cerrado" }
                 ]
             }
         };
 
         const plansData = {
+            septiembre: [
+                {
+                    name: "Felipe Carrasco", role: "Encargado SB / PH",
+                    shifts: [
+                        {fecha: "2026-09-01", sem: "w1", tag: "PH"}, {fecha: "2026-09-02", sem: "w1", tag: "SB"},
+                        {fecha: "2026-09-03", sem: "w1", tag: "PH"}, {fecha: "2026-09-04", sem: "w1", tag: "SB"},
+                        {fecha: "2026-09-05", sem: "w1", tag: "-"},  {fecha: "2026-09-06", sem: "w1", tag: "SB"},
+                        {fecha: "2026-09-07", sem: "w2", tag: "SB"}, {fecha: "2026-09-08", sem: "w2", tag: "PH"},
+                        {fecha: "2026-09-09", sem: "w2", tag: "SB"}, {fecha: "2026-09-10", sem: "w2", tag: "PH"},
+                        {fecha: "2026-09-11", sem: "w2", tag: "SB"}, {fecha: "2026-09-12", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-13", sem: "w2", tag: "SB"}, {fecha: "2026-09-14", sem: "w3", tag: "SB"},
+                        {fecha: "2026-09-15", sem: "w3", tag: "PH"}, {fecha: "2026-09-16", sem: "w3", tag: "SB"},
+                        {fecha: "2026-09-17", sem: "w3", tag: "PH"}, {fecha: "2026-09-18", sem: "w3", tag: "SB"},
+                        {fecha: "2026-09-19", sem: "w3", tag: "-"},  {fecha: "2026-09-20", sem: "w3", tag: "SB"},
+                        {fecha: "2026-09-21", sem: "w4", tag: "SB"}, {fecha: "2026-09-22", sem: "w4", tag: "PH"},
+                        {fecha: "2026-09-23", sem: "w4", tag: "SB"}, {fecha: "2026-09-24", sem: "w4", tag: "PH"},
+                        {fecha: "2026-09-25", sem: "w4", tag: "SB"}, {fecha: "2026-09-26", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-27", sem: "w4", tag: "SB"}, {fecha: "2026-09-28", sem: "w5", tag: "SB"},
+                        {fecha: "2026-09-29", sem: "w5", tag: "PH"}, {fecha: "2026-09-30", sem: "w5", tag: "SB"}
+                    ]
+                },
+                {
+                    name: "Francisco Navarro", role: "Casa Matriz / Apoyo SB",
+                    shifts: [
+                        {fecha: "2026-09-01", sem: "w1", tag: "SB"}, {fecha: "2026-09-02", sem: "w1", tag: "MC"},
+                        {fecha: "2026-09-03", sem: "w1", tag: "SB"}, {fecha: "2026-09-04", sem: "w1", tag: "MC"},
+                        {fecha: "2026-09-05", sem: "w1", tag: "SB"}, {fecha: "2026-09-06", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-07", sem: "w2", tag: "MC"}, {fecha: "2026-09-08", sem: "w2", tag: "SB"},
+                        {fecha: "2026-09-09", sem: "w2", tag: "MC"}, {fecha: "2026-09-10", sem: "w2", tag: "SB"},
+                        {fecha: "2026-09-11", sem: "w2", tag: "MC"}, {fecha: "2026-09-12", sem: "w2", tag: "SB"},
+                        {fecha: "2026-09-13", sem: "w2", tag: "-"},  {fecha: "2026-09-14", sem: "w3", tag: "MC"},
+                        {fecha: "2026-09-15", sem: "w3", tag: "SB"}, {fecha: "2026-09-16", sem: "w3", tag: "MC"},
+                        {fecha: "2026-09-17", sem: "w3", tag: "SB"}, {fecha: "2026-09-18", sem: "w3", tag: "MC"},
+                        {fecha: "2026-09-19", sem: "w3", tag: "SB"}, {fecha: "2026-09-20", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-21", sem: "w4", tag: "MC"}, {fecha: "2026-09-22", sem: "w4", tag: "SB"},
+                        {fecha: "2026-09-23", sem: "w4", tag: "MC"}, {fecha: "2026-09-24", sem: "w4", tag: "SB"},
+                        {fecha: "2026-09-25", sem: "w4", tag: "MC"}, {fecha: "2026-09-26", sem: "w4", tag: "SB"},
+                        {fecha: "2026-09-27", sem: "w4", tag: "-"},  {fecha: "2026-09-28", sem: "w5", tag: "MC"},
+                        {fecha: "2026-09-29", sem: "w5", tag: "SB"}, {fecha: "2026-09-30", sem: "w5", tag: "MC"}
+                    ]
+                },
+                {
+                    name: "Nicolás Zúñiga", role: "Encargado Parque Maipú",
+                    shifts: [
+                        {fecha: "2026-09-01", sem: "w1", tag: "MPU"}, {fecha: "2026-09-02", sem: "w1", tag: "MPU"},
+                        {fecha: "2026-09-03", sem: "w1", tag: "MPU"}, {fecha: "2026-09-04", sem: "w1", tag: "MPU"},
+                        {fecha: "2026-09-05", sem: "w1", tag: "-"}, {fecha: "2026-09-06", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-07", sem: "w2", tag: "MPU"}, {fecha: "2026-09-08", sem: "w2", tag: "MPU"},
+                        {fecha: "2026-09-09", sem: "w2", tag: "MPU"}, {fecha: "2026-09-10", sem: "w2", tag: "MPU"},
+                        {fecha: "2026-09-11", sem: "w2", tag: "MPU"}, {fecha: "2026-09-12", sem: "w2", tag: "MPU"},
+                        {fecha: "2026-09-13", sem: "w2", tag: "-"},   {fecha: "2026-09-14", sem: "w3", tag: "MPU"},
+                        {fecha: "2026-09-15", sem: "w3", tag: "MPU"}, {fecha: "2026-09-16", sem: "w3", tag: "MPU"},
+                        {fecha: "2026-09-17", sem: "w3", tag: "MPU"}, {fecha: "2026-09-18", sem: "w3", tag: "MPU"},
+                        {fecha: "2026-09-19", sem: "w3", tag: "MPU"}, {fecha: "2026-09-20", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-21", sem: "w4", tag: "MPU"}, {fecha: "2026-09-22", sem: "w4", tag: "MPU"},
+                        {fecha: "2026-09-23", sem: "w4", tag: "MPU"}, {fecha: "2026-09-24", sem: "w4", tag: "MPU"},
+                        {fecha: "2026-09-25", sem: "w4", tag: "MPU"}, {fecha: "2026-09-26", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-27", sem: "w4", tag: "-"},   {fecha: "2026-09-28", sem: "w5", tag: "MPU"},
+                        {fecha: "2026-09-29", sem: "w5", tag: "MPU"}, {fecha: "2026-09-30", sem: "w5", tag: "MPU"}
+                    ]
+                },
+                {
+                    name: "Claudio Silva", role: "Coordinador / Soporte Finde",
+                    shifts: [
+                        {fecha: "2026-09-01", sem: "w1", tag: "MC"}, {fecha: "2026-09-02", sem: "w1", tag: "MC"},
+                        {fecha: "2026-09-03", sem: "w1", tag: "MC"}, {fecha: "2026-09-04", sem: "w1", tag: "MC"},
+                        {fecha: "2026-09-05", sem: "w1", tag: "-"},  {fecha: "2026-09-06", sem: "w1", tag: "MPU"},
+                        {fecha: "2026-09-07", sem: "w2", tag: "MC"}, {fecha: "2026-09-08", sem: "w2", tag: "MC"},
+                        {fecha: "2026-09-09", sem: "w2", tag: "MC"}, {fecha: "2026-09-10", sem: "w2", tag: "MC"},
+                        {fecha: "2026-09-11", sem: "w2", tag: "MC"}, {fecha: "2026-09-12", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-13", sem: "w2", tag: "MPU"},{fecha: "2026-09-14", sem: "w3", tag: "MC"},
+                        {fecha: "2026-09-15", sem: "w3", tag: "MC"}, {fecha: "2026-09-16", sem: "w3", tag: "MC"},
+                        {fecha: "2026-09-17", sem: "w3", tag: "MC"}, {fecha: "2026-09-18", sem: "w3", tag: "MC"},
+                        {fecha: "2026-09-19", sem: "w3", tag: "-"},  {fecha: "2026-09-20", sem: "w3", tag: "MPU"},
+                        {fecha: "2026-09-21", sem: "w4", tag: "MC"}, {fecha: "2026-09-22", sem: "w4", tag: "MC"},
+                        {fecha: "2026-09-23", sem: "w4", tag: "MC"}, {fecha: "2026-09-24", sem: "w4", tag: "MC"},
+                        {fecha: "2026-09-25", sem: "w4", tag: "MC"}, {fecha: "2026-09-26", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-27", sem: "w4", tag: "MPU"},{fecha: "2026-09-28", sem: "w5", tag: "MC"},
+                        {fecha: "2026-09-29", sem: "w5", tag: "MC"}, {fecha: "2026-09-30", sem: "w5", tag: "MC"}
+                    ]
+                },
+                {
+                    name: "Orlando Valladares", role: "Soporte Backup",
+                    shifts: [
+                        {fecha: "2026-09-01", sem: "w1", tag: "-"}, {fecha: "2026-09-02", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-03", sem: "w1", tag: "-"}, {fecha: "2026-09-04", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-05", sem: "w1", tag: "MPU"}, {fecha: "2026-09-06", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-07", sem: "w2", tag: "-"}, {fecha: "2026-09-08", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-09", sem: "w2", tag: "-"}, {fecha: "2026-09-10", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-11", sem: "w2", tag: "-"}, {fecha: "2026-09-12", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-13", sem: "w2", tag: "-"}, {fecha: "2026-09-14", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-15", sem: "w3", tag: "-"}, {fecha: "2026-09-16", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-17", sem: "w3", tag: "-"}, {fecha: "2026-09-18", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-19", sem: "w3", tag: "-"}, {fecha: "2026-09-20", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-21", sem: "w4", tag: "-"}, {fecha: "2026-09-22", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-23", sem: "w4", tag: "-"}, {fecha: "2026-09-24", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-25", sem: "w4", tag: "-"}, {fecha: "2026-09-26", sem: "w4", tag: "MPU"},
+                        {fecha: "2026-09-27", sem: "w4", tag: "-"}, {fecha: "2026-09-28", sem: "w5", tag: "-"},
+                        {fecha: "2026-09-29", sem: "w5", tag: "-"}, {fecha: "2026-09-30", sem: "w5", tag: "-"}
+                    ]
+                },
+                {
+                    name: "BKP", role: "Cubrimiento Contingencias",
+                    shifts: [
+                        {fecha: "2026-09-01", sem: "w1", tag: "-"}, {fecha: "2026-09-02", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-03", sem: "w1", tag: "-"}, {fecha: "2026-09-04", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-05", sem: "w1", tag: "-"}, {fecha: "2026-09-06", sem: "w1", tag: "-"},
+                        {fecha: "2026-09-07", sem: "w2", tag: "-"}, {fecha: "2026-09-08", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-09", sem: "w2", tag: "-"}, {fecha: "2026-09-10", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-11", sem: "w2", tag: "-"}, {fecha: "2026-09-12", sem: "w2", tag: "-"},
+                        {fecha: "2026-09-13", sem: "w2", tag: "-"}, {fecha: "2026-09-14", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-15", sem: "w3", tag: "-"}, {fecha: "2026-09-16", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-17", sem: "w3", tag: "-"}, {fecha: "2026-09-18", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-19", sem: "w3", tag: "-"}, {fecha: "2026-09-20", sem: "w3", tag: "-"},
+                        {fecha: "2026-09-21", sem: "w4", tag: "-"}, {fecha: "2026-09-22", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-23", sem: "w4", tag: "-"}, {fecha: "2026-09-24", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-25", sem: "w4", tag: "-"}, {fecha: "2026-09-26", sem: "w4", tag: "-"},
+                        {fecha: "2026-09-27", sem: "w4", tag: "-"}, {fecha: "2026-09-28", sem: "w5", tag: "-"},
+                        {fecha: "2026-09-29", sem: "w5", tag: "-"}, {fecha: "2026-09-30", sem: "w5", tag: "-"}
+                    ]
+                }
+            ],
             agosto: [
                 {
                     name: "Felipe Carrasco", role: "Encargado SB / PH",
@@ -714,7 +874,7 @@
             ]
         };
 
-        let currentMonth = "agosto";
+        let currentMonth = "septiembre";
 
         function renderBitacoraDetails() {
             const selectedDate = document.getElementById("bitacoraDateSelect").value;
@@ -725,7 +885,7 @@
             const kpiContainer = document.getElementById("bitacoraKpis");
             kpiContainer.innerHTML = `
                 <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-                    <span class="text-slate-400 block font-medium">Tickets Recibidos Hoy</span>
+                    <span class="text-slate-400 block font-medium">Tickets Registrados</span>
                     <h4 class="text-2xl font-black text-slate-900 mt-1">${data.recibidos}</h4>
                 </div>
                 <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
@@ -746,7 +906,6 @@
             document.getElementById("bitacoraActividadesText").innerText = data.actividades || "Sin actividades especiales.";
             document.getElementById("bitacoraOtrosText").innerText = data.otros || "Sin notas adicionales.";
 
-            // Render 100% of Data sheet tickets
             filterDataTicketsTable();
         }
 
@@ -792,7 +951,7 @@
                 }
             });
 
-            document.getElementById("ticketCountInfo").innerText = `Mostrando ${count} de ${data.ticketsData.length} tickets registrados en Hoja Data[cite: 1]`;
+            document.getElementById("ticketCountInfo").innerText = `Mostrando ${count} de ${data.ticketsData.length} tickets registrados en Hoja Data`;
         }
 
         function renderMatrix(semanaFilter) {
@@ -876,11 +1035,11 @@
             const titles = {
                 'resumen': 'Resumen Ejecutivo',
                 'turnos': 'Planificación Mensual de Turnos',
-                'bitacora': 'Explorador de Bitácora Diaria de Soporte TI (31 de Julio de 2026)[cite: 1]',
-                'tickets': 'Gestión de Tickets e Histórico',
+                'bitacora': 'Explorador de Bitácora Diaria y Hoja Data',
+                'tickets': 'Histórico y Rendimiento Operativo',
                 'calidad': 'Control de Calidad PENC',
                 'mantenciones': 'Mantenciones Preventivas PM',
-                'riesgos': 'Matriz de Riesgos y Mejoras'
+                'riesgos': 'Matriz de Riesgos e Incidencias por Lentitud'
             };
             document.getElementById('header-title').innerText = titles[tabId];
         }
@@ -893,10 +1052,10 @@
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Felipe Carrasco M.', 'Nicolás Zúñiga', 'Francisco Navarro', 'Claudio Silva', 'Orlando Valladares'],
+                    labels: ['Felipe Carrasco M.', 'Nicolás Zúñiga', 'Francisco Navarro', 'Claudio Silva'],
                     datasets: [{
-                        label: 'Tickets Solucionados (YTD)',
-                        data: [798, 693, 636, 186, 49],
+                        label: 'Tickets Cerrados Agosto 2026',
+                        data: [155, 130, 107, 30],
                         backgroundColor: '#f58220',
                         borderRadius: 4
                     }]
